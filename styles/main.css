@@ -143,13 +143,19 @@ body {
 
 /* Dashboard Sections */
 .dashboard-sections {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 40px;
+    display: block;
     margin-bottom: 40px;
 }
 
-.recent-books,
+.recent-books {
+    background: white;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    width: 100%;
+    min-height: 600px;
+}
+
 .quick-actions {
     background: white;
     padding: 30px;
@@ -157,7 +163,14 @@ body {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.recent-books h2,
+.recent-books h2 {
+    color: #2c3e50;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 700;
+}
+
 .quick-actions h2 {
     color: #2c3e50;
     margin-bottom: 20px;
@@ -167,9 +180,10 @@ body {
 /* Books Grid */
 .books-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
     margin-bottom: 40px;
+    padding: 20px 0;
 }
 
 .book-card {
