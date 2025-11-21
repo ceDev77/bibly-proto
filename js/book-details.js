@@ -33,7 +33,7 @@ function loadBookDetails() {
 // Exibir detalhes do livro
 function displayBookDetails(book) {
     // Atualizar título da página
-    document.title = `${book.title} - Biblioteca Online`;
+    document.title = `${book.title} - Bibly`;
     
     // Preencher informações básicas
     document.getElementById('bookImage').src = book.image;

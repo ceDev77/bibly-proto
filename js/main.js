@@ -1,4 +1,4 @@
-// Biblioteca Online - JavaScript Principal
+// Bibly - JavaScript Principal
 // Funcionalidades gerais e utilitárias
 
 // Dados simulados para demonstração
