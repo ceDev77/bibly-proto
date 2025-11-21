@@ -65,19 +65,6 @@
                         <form id="newLoanForm" class="loan-form">
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="userSearch">
-                                        <i class="fas fa-user"></i> Buscar Usuário
-                                    </label>
-                                    <div class="search-input-group">
-                                        <input type="text" id="userSearch" class="form-control" placeholder="Digite nome, e-mail ou CPF do usuário">
-                                        <button type="button" class="btn btn-secondary" onclick="searchUser()">
-                                            <i class="fas fa-search"></i>
-                                        </button>
-                                    </div>
-                                    <div id="userResults" class="search-results"></div>
-                                </div>
-
-                                <div class="form-group">
                                     <label for="bookSearch">
                                         <i class="fas fa-book"></i> Buscar Livro
                                     </label>
@@ -92,20 +79,6 @@
                             </div>
 
                             <div class="selected-items">
-                                <div class="selected-user" id="selectedUser" style="display: none;">
-                                    <h3>Usuário Selecionado</h3>
-                                    <div class="user-card">
-                                        <div class="user-info">
-                                            <strong id="selectedUserName">-</strong>
-                                            <p id="selectedUserEmail">-</p>
-                                            <small id="selectedUserCPF">-</small>
-                                        </div>
-                                        <button type="button" class="btn btn-danger btn-sm" onclick="clearSelectedUser()">
-                                            <i class="fas fa-times"></i>
-                                        </button>
-                                    </div>
-                                </div>
-
                                 <div class="selected-book" id="selectedBook" style="display: none;">
                                     <h3>Livro Selecionado</h3>
                                     <div class="book-card-loan">

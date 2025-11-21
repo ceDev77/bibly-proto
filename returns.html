@@ -53,13 +53,134 @@
 
             <div class="returns-container">
                 <div class="returns-tabs">
-                    <button class="tab-button active" onclick="showReturnTab('process')">
+                    <button class="tab-button active" onclick="showReturnTab('borrowed')">
+                        <i class="fas fa-book-open"></i> Meus Livros Emprestados
+                    </button>
+                    <button class="tab-button" onclick="showReturnTab('history')">
+                        <i class="fas fa-history"></i> Histórico de Devoluções
+                    </button>
+                    <button class="tab-button" onclick="showReturnTab('process')">
                         <i class="fas fa-undo"></i> Processar Devolução
                     </button>
                 </div>
 
+                <!-- Meus Livros Emprestados -->
+                <div id="borrowed-books" class="tab-content active">
+                    <div class="borrowed-section">
+                        <div class="section-header">
+                            <h2>Meus Livros Emprestados</h2>
+                            <p>Livros que você tem emprestados atualmente</p>
+                        </div>
+
+                        <div class="borrowed-books-grid">
+                            <div class="borrowed-book-card">
+                                <div class="book-image">
+                                    <img src="https://via.placeholder.com/120x160/4a90e2/ffffff?text=Livro+1" alt="Dom Casmurro">
+                                </div>
+                                <div class="book-details">
+                                    <h3>Dom Casmurro</h3>
+                                    <p class="book-author">Machado de Assis</p>
+                                    <div class="loan-info">
+                                        <div class="info-item">
+                                            <i class="fas fa-calendar"></i>
+                                            <span>Emprestado em: <strong>01/11/2024</strong></span>
+                                        </div>
+                                        <div class="info-item">
+                                            <i class="fas fa-calendar-check"></i>
+                                            <span>Devolver até: <strong>21/11/2024</strong></span>
+                                        </div>
+                                        <div class="info-item">
+                                            <i class="fas fa-clock"></i>
+                                            <span>Tempo restante: <strong class="time-remaining">0 dias</strong></span>
+                                        </div>
+                                        <div class="info-item fine">
+                                            <i class="fas fa-exclamation-triangle"></i>
+                                            <span>Multa: <strong class="fine-amount">R$ 0,50</strong></span>
+                                        </div>
+                                    </div>
+                                    <div class="book-actions">
+                                        <button class="btn btn-success btn-sm" onclick="returnBook(1)">
+                                            <i class="fas fa-undo"></i> Devolver
+                                        </button>
+                                        <button class="btn btn-secondary btn-sm" onclick="renewBook(1)">
+                                            <i class="fas fa-refresh"></i> Renovar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Histórico de Devoluções -->
+                <div id="return-history" class="tab-content">
+                    <div class="history-section">
+                        <div class="section-header">
+                            <h2>Histórico de Devoluções</h2>
+                            <p>Livros que você já devolveu</p>
+                        </div>
+
+                        <div class="table-container">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Livro</th>
+                                        <th>Data Empréstimo</th>
+                                        <th>Data Devolução</th>
+                                        <th>Dias de Atraso</th>
+                                        <th>Multa Paga</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="book-cell">
+                                                <strong>Iracema</strong>
+                                                <small>José de Alencar</small>
+                                            </div>
+                                        </td>
+                                        <td>15/10/2024</td>
+                                        <td>29/10/2024</td>
+                                        <td><span class="no-delay">0</span></td>
+                                        <td><span class="no-fine">R$ 0,00</span></td>
+                                        <td><span class="status-badge returned">Devolvido no Prazo</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="book-cell">
+                                                <strong>Senhora</strong>
+                                                <small>José de Alencar</small>
+                                            </div>
+                                        </td>
+                                        <td>01/09/2024</td>
+                                        <td>18/09/2024</td>
+                                        <td><span class="delay">3 dias</span></td>
+                                        <td><span class="fine-paid">R$ 1,50</span></td>
+                                        <td><span class="status-badge late-return">Devolvido com Atraso</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="book-cell">
+                                                <strong>Memórias Póstumas de Brás Cubas</strong>
+                                                <small>Machado de Assis</small>
+                                            </div>
+                                        </td>
+                                        <td>10/08/2024</td>
+                                        <td>24/08/2024</td>
+                                        <td><span class="no-delay">0</span></td>
+                                        <td><span class="no-fine">R$ 0,00</span></td>
+                                        <td><span class="status-badge returned">Devolvido no Prazo</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Processar Devolução -->
-                <div id="process-return" class="tab-content active">
+                <div id="process-return" class="tab-content">
                     <div class="form-container">
                         <h2>Processar Nova Devolução</h2>
                         

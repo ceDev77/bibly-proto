@@ -162,7 +162,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
-
+ 
 .recent-books h2 {
     color: #2c3e50;
     margin-bottom: 40px;
@@ -836,5 +836,155 @@ body {
         flex-direction: column;
         gap: 15px;
         text-align: center;
+    }
+}
+
+/* Borrowed Books Styles */
+.borrowed-books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.borrowed-book-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    transition: transform 0.3s ease;
+}
+
+.borrowed-book-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.borrowed-book-card .book-image img {
+    width: 120px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.borrowed-book-card .book-details {
+    flex: 1;
+}
+
+.borrowed-book-card h3 {
+    color: #2c3e50;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.borrowed-book-card .book-author {
+    color: #7f8c8d;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.loan-info {
+    margin-bottom: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.info-item i {
+    width: 20px;
+    margin-right: 10px;
+    color: #667eea;
+}
+
+.info-item.fine i {
+    color: #e74c3c;
+}
+
+.time-remaining {
+    color: #e74c3c;
+}
+
+.time-remaining.ok {
+    color: #27ae60;
+}
+
+.fine-amount {
+    color: #e74c3c;
+}
+
+.status-ok {
+    color: #27ae60;
+}
+
+.book-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.book-actions .btn {
+    flex: 1;
+}
+
+/* History Table Styles */
+.no-delay {
+    color: #27ae60;
+    font-weight: 500;
+}
+
+.delay {
+    color: #e74c3c;
+    font-weight: 500;
+}
+
+.no-fine {
+    color: #27ae60;
+    font-weight: 500;
+}
+
+.fine-paid {
+    color: #e74c3c;
+    font-weight: 500;
+}
+
+.status-badge.returned {
+    background: #d4edda;
+    color: #155724;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+.status-badge.late-return {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+/* Responsive Design for Borrowed Books */
+@media (max-width: 768px) {
+    .borrowed-books-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .borrowed-book-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .borrowed-book-card .book-image {
+        align-self: center;
+    }
+    
+    .book-actions {
+        justify-content: center;
     }
 }
