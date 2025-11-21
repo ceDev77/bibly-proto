@@ -855,7 +855,6 @@ body {
     display: flex;
     gap: 20px;
     transition: transform 0.3s ease;
-}
 
 .borrowed-book-card:hover {
     transform: translateY(-2px);
