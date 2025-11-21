@@ -149,7 +149,7 @@ body {
 
 .recent-books {
     background: white;
-    padding: 50px;
+    padding: 50px 80px;
     border-radius: 15px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
     width: 100%;
