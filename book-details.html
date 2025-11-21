@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Livro - Biblioteca Online</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-book"></i>
+                <span>Biblioteca Online</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i> Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="books.html" class="nav-link">
+                        <i class="fas fa-book-open"></i> Livros
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="loans.html" class="nav-link">
+                        <i class="fas fa-handshake"></i> Empréstimos
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="returns.html" class="nav-link">
+                        <i class="fas fa-undo"></i> Devoluções
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="login.html" class="nav-link">
+                        <i class="fas fa-sign-in-alt"></i> Login
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Dashboard</a> > 
+                <a href="books.html">Livros</a> > 
+                <span>Detalhes do Livro</span>
+            </div>
+
+            <div class="book-details-container">
+                <div class="book-details-grid">
+                    <div class="book-image-section">
+                        <img id="bookImage" src="https://via.placeholder.com/300x400/4a90e2/ffffff?text=Carregando..." alt="Capa do Livro" class="book-cover-large">
+                        <div class="book-actions">
+                            <button class="btn btn-primary btn-full" onclick="requestLoan()">
+                                <i class="fas fa-handshake"></i> Solicitar Empréstimo
+                            </button>
+                            <button class="btn btn-secondary btn-full" onclick="addToWishlist()">
+                                <i class="fas fa-heart"></i> Adicionar aos Favoritos
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="book-info-section">
+                        <div class="book-header">
+                            <h1 id="bookTitle">Carregando título...</h1>
+                            <p class="book-author" id="bookAuthor">Carregando autor...</p>
+                        </div>
+
+                        <div class="book-meta">
+                            <div class="meta-item">
+                                <strong>ISBN:</strong>
+                                <span id="bookISBN">-</span>
+                            </div>
+                            <div class="meta-item">
+                                <strong>Categoria:</strong>
+                                <span id="bookCategory" class="category-tag">-</span>
+                            </div>
+                            <div class="meta-item">
+                                <strong>Ano de Publicação:</strong>
+                                <span id="bookYear">-</span>
+                            </div>
+                            <div class="meta-item">
+                                <strong>Editora:</strong>
+                                <span id="bookPublisher">-</span>
+                            </div>
+                            <div class="meta-item">
+                                <strong>Páginas:</strong>
+                                <span id="bookPages">-</span>
+                            </div>
+                            <div class="meta-item">
+                                <strong>Status:</strong>
+                                <span id="bookStatus" class="status-badge">-</span>
+                            </div>
+                        </div>
+
+                        <div class="book-description">
+                            <h3>Sinopse</h3>
+                            <p id="bookDescription">Carregando descrição...</p>
+                        </div>
+
+                        <div class="book-availability">
+                            <h3>Disponibilidade</h3>
+                            <div class="availability-info">
+                                <div class="availability-item">
+                                    <i class="fas fa-book"></i>
+                                    <span>Exemplares Totais: <strong id="totalCopies">-</strong></span>
+                                </div>
+                                <div class="availability-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Disponíveis: <strong id="availableCopies">-</strong></span>
+                                </div>
+                                <div class="availability-item">
+                                    <i class="fas fa-handshake"></i>
+                                    <span>Emprestados: <strong id="loanedCopies">-</strong></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="book-additional-info">
+                    <div class="tabs">
+                        <button class="tab-button active" onclick="showTab('reviews')">Avaliações</button>
+                        <button class="tab-button" onclick="showTab('history')">Histórico</button>
+                        <button class="tab-button" onclick="showTab('similar')">Livros Similares</button>
+                    </div>
+
+                    <div id="reviews" class="tab-content active">
+                        <div class="reviews-section">
+                            <div class="reviews-header">
+                                <h3>Avaliações dos Usuários</h3>
+                                <div class="rating-summary">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <span>4.2 (23 avaliações)</span>
+                                </div>
+                            </div>
+                            <div class="reviews-list">
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <strong>Maria Silva</strong>
+                                        <div class="review-stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <p>Excelente livro! A narrativa é envolvente e os personagens são muito bem desenvolvidos.</p>
+                                    <small>Avaliado em 15/11/2024</small>
+                                </div>
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <strong>João Santos</strong>
+                                        <div class="review-stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <p>Boa leitura, recomendo para quem gosta do gênero.</p>
+                                    <small>Avaliado em 10/11/2024</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="history" class="tab-content">
+                        <div class="history-section">
+                            <h3>Histórico de Empréstimos</h3>
+                            <div class="history-list">
+                                <div class="history-item">
+                                    <div class="history-date">15/10/2024 - 29/10/2024</div>
+                                    <div class="history-user">Emprestado para: Ana Costa</div>
+                                    <div class="history-status returned">Devolvido</div>
+                                </div>
+                                <div class="history-item">
+                                    <div class="history-date">01/09/2024 - 15/09/2024</div>
+                                    <div class="history-user">Emprestado para: Carlos Lima</div>
+                                    <div class="history-status returned">Devolvido</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="similar" class="tab-content">
+                        <div class="similar-books">
+                            <h3>Livros Similares</h3>
+                            <div class="similar-books-grid">
+                                <div class="similar-book">
+                                    <img src="https://via.placeholder.com/120x160/e74c3c/ffffff?text=Livro+A" alt="Livro Similar">
+                                    <h4>O Cortiço</h4>
+                                    <p>Aluísio Azevedo</p>
+                                    <a href="book-details.html?id=2" class="btn btn-primary btn-sm">Ver Detalhes</a>
+                                </div>
+                                <div class="similar-book">
+                                    <img src="https://via.placeholder.com/120x160/2ecc71/ffffff?text=Livro+B" alt="Livro Similar">
+                                    <h4>Iracema</h4>
+                                    <p>José de Alencar</p>
+                                    <a href="book-details.html?id=3" class="btn btn-primary btn-sm">Ver Detalhes</a>
+                                </div>
+                                <div class="similar-book">
+                                    <img src="https://via.placeholder.com/120x160/f39c12/ffffff?text=Livro+C" alt="Livro Similar">
+                                    <h4>Senhora</h4>
+                                    <p>José de Alencar</p>
+                                    <a href="book-details.html?id=4" class="btn btn-primary btn-sm">Ver Detalhes</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Biblioteca Online. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/book-details.js"></script>
+</body>
+</html>

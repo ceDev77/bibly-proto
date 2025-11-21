@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Online - Dashboard</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-book"></i>
+                <span>Biblioteca Online</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">
+                        <i class="fas fa-home"></i> Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="books.html" class="nav-link">
+                        <i class="fas fa-book-open"></i> Livros
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="loans.html" class="nav-link">
+                        <i class="fas fa-handshake"></i> Empréstimos
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="returns.html" class="nav-link">
+                        <i class="fas fa-undo"></i> Devoluções
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="login.html" class="nav-link">
+                        <i class="fas fa-sign-in-alt"></i> Login
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <header class="page-header">
+                <h1>Dashboard</h1>
+                <p>Bem-vindo à Biblioteca Online</p>
+            </header>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>1,250</h3>
+                        <p>Livros Disponíveis</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>342</h3>
+                        <p>Usuários Cadastrados</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>89</h3>
+                        <p>Empréstimos Ativos</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>12</h3>
+                        <p>Devoluções Pendentes</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-sections">
+                <section class="recent-books">
+                    <h2>Livros Recém Adicionados</h2>
+                    <div class="books-grid">
+                        <div class="book-card">
+                            <img src="https://via.placeholder.com/150x200/4a90e2/ffffff?text=Livro+1" alt="Livro 1">
+                            <h3>Dom Casmurro</h3>
+                            <p>Machado de Assis</p>
+                            <a href="book-details.html?id=1" class="btn btn-primary">Ver Detalhes</a>
+                        </div>
+                        <div class="book-card">
+                            <img src="https://via.placeholder.com/150x200/e74c3c/ffffff?text=Livro+2" alt="Livro 2">
+                            <h3>O Cortiço</h3>
+                            <p>Aluísio Azevedo</p>
+                            <a href="book-details.html?id=2" class="btn btn-primary">Ver Detalhes</a>
+                        </div>
+                        <div class="book-card">
+                            <img src="https://via.placeholder.com/150x200/2ecc71/ffffff?text=Livro+3" alt="Livro 3">
+                            <h3>Iracema</h3>
+                            <p>José de Alencar</p>
+                            <a href="book-details.html?id=3" class="btn btn-primary">Ver Detalhes</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="quick-actions">
+                    <h2>Ações Rápidas</h2>
+                    <div class="actions-grid">
+                        <a href="books.html" class="action-card">
+                            <i class="fas fa-search"></i>
+                            <h3>Buscar Livros</h3>
+                            <p>Encontre livros por título, autor ou categoria</p>
+                        </a>
+                        <a href="loans.html" class="action-card">
+                            <i class="fas fa-plus"></i>
+                            <h3>Novo Empréstimo</h3>
+                            <p>Realize um novo empréstimo de livro</p>
+                        </a>
+                        <a href="returns.html" class="action-card">
+                            <i class="fas fa-undo"></i>
+                            <h3>Devolver Livro</h3>
+                            <p>Processe a devolução de um livro</p>
+                        </a>
+                        <a href="register.html" class="action-card">
+                            <i class="fas fa-user-plus"></i>
+                            <h3>Cadastrar Usuário</h3>
+                            <p>Registre um novo usuário no sistema</p>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Biblioteca Online. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
