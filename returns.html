@@ -59,9 +59,6 @@
                     <button class="tab-button" onclick="showReturnTab('history')">
                         <i class="fas fa-history"></i> Histórico de Devoluções
                     </button>
-                    <button class="tab-button" onclick="showReturnTab('process')">
-                        <i class="fas fa-undo"></i> Processar Devolução
-                    </button>
                 </div>
 
                 <!-- Meus Livros Emprestados -->
@@ -137,8 +134,8 @@
                                     <tr>
                                         <td>
                                             <div class="book-cell">
-                                                <strong>Iracema</strong>
-                                                <small>José de Alencar</small>
+                                                <strong>Dom Casmurro</strong>
+                                                <small>Machado de Assis</small>
                                             </div>
                                         </td>
                                         <td>15/10/2024</td>
@@ -150,8 +147,8 @@
                                     <tr>
                                         <td>
                                             <div class="book-cell">
-                                                <strong>Senhora</strong>
-                                                <small>José de Alencar</small>
+                                                <strong>Dom Casmurro</strong>
+                                                <small>Machado de Assis</small>
                                             </div>
                                         </td>
                                         <td>01/09/2024</td>
@@ -160,183 +157,12 @@
                                         <td><span class="fine-paid">R$ 1,50</span></td>
                                         <td><span class="status-badge late-return">Devolvido com Atraso</span></td>
                                     </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="book-cell">
-                                                <strong>Memórias Póstumas de Brás Cubas</strong>
-                                                <small>Machado de Assis</small>
-                                            </div>
-                                        </td>
-                                        <td>10/08/2024</td>
-                                        <td>24/08/2024</td>
-                                        <td><span class="no-delay">0</span></td>
-                                        <td><span class="no-fine">R$ 0,00</span></td>
-                                        <td><span class="status-badge returned">Devolvido no Prazo</span></td>
-                                    </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
 
-                <!-- Processar Devolução -->
-                <div id="process-return" class="tab-content">
-                    <div class="form-container">
-                        <h2>Processar Nova Devolução</h2>
-                        
-                        <div class="search-methods">
-                            <div class="method-tabs">
-                                <button class="method-tab active" onclick="showSearchMethod('user')">
-                                    <i class="fas fa-user"></i> Buscar por Usuário
-                                </button>
-                                <button class="method-tab" onclick="showSearchMethod('book')">
-                                    <i class="fas fa-book"></i> Buscar por Livro
-                                </button>
-                                <button class="method-tab" onclick="showSearchMethod('isbn')">
-                                    <i class="fas fa-barcode"></i> Código/ISBN
-                                </button>
-                            </div>
-
-                            <!-- Busca por Usuário -->
-                            <div id="search-by-user" class="search-method active">
-                                <div class="form-group">
-                                    <label for="userReturnSearch">
-                                        <i class="fas fa-user"></i> Buscar Usuário
-                                    </label>
-                                    <div class="search-input-group">
-                                        <input type="text" id="userReturnSearch" class="form-control" placeholder="Digite nome, e-mail ou CPF do usuário">
-                                        <button type="button" class="btn btn-secondary" onclick="searchUserForReturn()">
-                                            <i class="fas fa-search"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div id="userReturnResults" class="search-results"></div>
-                            </div>
-
-                            <!-- Busca por Livro -->
-                            <div id="search-by-book" class="search-method">
-                                <div class="form-group">
-                                    <label for="bookReturnSearch">
-                                        <i class="fas fa-book"></i> Buscar Livro
-                                    </label>
-                                    <div class="search-input-group">
-                                        <input type="text" id="bookReturnSearch" class="form-control" placeholder="Digite título ou autor do livro">
-                                        <button type="button" class="btn btn-secondary" onclick="searchBookForReturn()">
-                                            <i class="fas fa-search"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div id="bookReturnResults" class="search-results"></div>
-                            </div>
-
-                            <!-- Busca por ISBN -->
-                            <div id="search-by-isbn" class="search-method">
-                                <div class="form-group">
-                                    <label for="isbnReturnSearch">
-                                        <i class="fas fa-barcode"></i> Código ISBN ou Código de Barras
-                                    </label>
-                                    <div class="search-input-group">
-                                        <input type="text" id="isbnReturnSearch" class="form-control" placeholder="Digite ou escaneie o código">
-                                        <button type="button" class="btn btn-secondary" onclick="searchByISBN()">
-                                            <i class="fas fa-search"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div id="isbnReturnResults" class="search-results"></div>
-                            </div>
-                        </div>
-
-                        <!-- Empréstimos Encontrados -->
-                        <div id="foundLoans" class="found-loans" style="display: none;">
-                            <h3>Empréstimos Encontrados</h3>
-                            <div id="loansList" class="loans-list"></div>
-                        </div>
-
-                        <!-- Formulário de Devolução -->
-                        <div id="returnForm" class="return-form" style="display: none;">
-                            <h3>Confirmar Devolução</h3>
-                            <div class="return-details">
-                                <div class="loan-info">
-                                    <div class="loan-card">
-                                        <div class="loan-header">
-                                            <h4>Informações do Empréstimo</h4>
-                                        </div>
-                                        <div class="loan-content">
-                                            <div class="user-info">
-                                                <strong>Usuário:</strong> <span id="returnUserName">-</span><br>
-                                                <strong>E-mail:</strong> <span id="returnUserEmail">-</span>
-                                            </div>
-                                            <div class="book-info">
-                                                <strong>Livro:</strong> <span id="returnBookTitle">-</span><br>
-                                                <strong>Autor:</strong> <span id="returnBookAuthor">-</span><br>
-                                                <strong>ISBN:</strong> <span id="returnBookISBN">-</span>
-                                            </div>
-                                            <div class="dates-info">
-                                                <strong>Data do Empréstimo:</strong> <span id="returnLoanDate">-</span><br>
-                                                <strong>Data Prevista:</strong> <span id="returnDueDate">-</span><br>
-                                                <strong>Dias em Atraso:</strong> <span id="returnOverdueDays" class="overdue-days">-</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <form id="processReturnForm" class="process-form">
-                                    <div class="form-row">
-                                        <div class="form-group">
-                                            <label for="returnDate">
-                                                <i class="fas fa-calendar"></i> Data da Devolução
-                                            </label>
-                                            <input type="date" id="returnDate" class="form-control" required>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="bookCondition">
-                                                <i class="fas fa-clipboard-check"></i> Condição do Livro
-                                            </label>
-                                            <select id="bookCondition" class="form-control" required>
-                                                <option value="">Selecione a condição</option>
-                                                <option value="excellent">Excelente</option>
-                                                <option value="good">Boa</option>
-                                                <option value="fair">Regular</option>
-                                                <option value="poor">Ruim</option>
-                                                <option value="damaged">Danificado</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="returnNotes">
-                                            <i class="fas fa-sticky-note"></i> Observações
-                                        </label>
-                                        <textarea id="returnNotes" class="form-control" rows="3" placeholder="Adicione observações sobre a devolução..."></textarea>
-                                    </div>
-
-                                    <div class="fine-calculation" id="fineCalculation" style="display: none;">
-                                        <div class="fine-info">
-                                            <h4><i class="fas fa-exclamation-circle"></i> Multa por Atraso</h4>
-                                            <p>Dias de atraso: <strong id="fineDays">0</strong></p>
-                                            <p>Valor da multa: <strong id="fineAmount">R$ 0,00</strong></p>
-                                            <label class="checkbox-label">
-                                                <input type="checkbox" id="fineWaived">
-                                                <span class="checkmark"></span>
-                                                Dispensar multa
-                                            </label>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-actions">
-                                        <button type="submit" class="btn btn-success">
-                                            <i class="fas fa-check"></i> Confirmar Devolução
-                                        </button>
-                                        <button type="button" class="btn btn-secondary" onclick="cancelReturn()">
-                                            <i class="fas fa-times"></i> Cancelar
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
             </div>
         </div>

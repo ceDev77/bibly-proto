@@ -313,6 +313,11 @@ body {
 
 .form-group {
     margin-bottom: 20px;
+    width: 100%;
+}
+
+.loan-form .form-group {
+    max-width: none;
 }
 
 .form-group label {
@@ -477,10 +482,13 @@ body {
 .search-input-group {
     display: flex;
     gap: 5px;
+    width: 100%;
+    max-width: 800px;
 }
 
 .search-input-group .form-control {
     flex: 1;
+    min-width: 300px;
 }
 
 .selected-items {
@@ -525,7 +533,7 @@ body {
 
 .form-row {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 20px;
 }
 

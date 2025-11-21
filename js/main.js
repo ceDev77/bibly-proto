@@ -45,54 +45,6 @@ const mockData = {
             totalCopies: 5,
             availableCopies: 3,
             loanedCopies: 2
-        },
-        {
-            id: 2,
-            title: "O Cortiço",
-            author: "Aluísio Azevedo",
-            isbn: "978-85-359-0278-2",
-            category: "literatura",
-            year: 1890,
-            publisher: "Editora Moderna",
-            pages: 304,
-            description: "O Cortiço é um romance naturalista brasileiro escrito por Aluísio Azevedo e publicado em 1890. A obra retrata a vida em um cortiço no Rio de Janeiro do século XIX.",
-            image: "https://via.placeholder.com/300x400/e74c3c/ffffff?text=O+Cortico",
-            status: "disponivel",
-            totalCopies: 3,
-            availableCopies: 1,
-            loanedCopies: 2
-        },
-        {
-            id: 3,
-            title: "Iracema",
-            author: "José de Alencar",
-            isbn: "978-85-359-0279-9",
-            category: "romance",
-            year: 1865,
-            publisher: "Editora Saraiva",
-            pages: 128,
-            description: "Iracema é um romance brasileiro escrito por José de Alencar e publicado em 1865. A obra narra a história de amor entre a índia Iracema e o português Martim.",
-            image: "https://via.placeholder.com/300x400/2ecc71/ffffff?text=Iracema",
-            status: "disponivel",
-            totalCopies: 4,
-            availableCopies: 4,
-            loanedCopies: 0
-        },
-        {
-            id: 4,
-            title: "Senhora",
-            author: "José de Alencar",
-            isbn: "978-85-359-0280-5",
-            category: "romance",
-            year: 1875,
-            publisher: "Editora FTD",
-            pages: 192,
-            description: "Senhora é um romance urbano de José de Alencar, publicado em 1875. A obra conta a história de Aurélia Camargo e Fernando Seixas.",
-            image: "https://via.placeholder.com/300x400/f39c12/ffffff?text=Senhora",
-            status: "emprestado",
-            totalCopies: 2,
-            availableCopies: 0,
-            loanedCopies: 2
         }
     ],
     loans: [
@@ -108,21 +60,22 @@ const mockData = {
         {
             id: 2,
             userId: 2,
-            bookId: 2,
-            loanDate: "2024-10-28",
-            dueDate: "2024-11-11",
-            status: "overdue",
-            notes: ""
-        },
-        {
-            id: 3,
-            userId: 3,
-            bookId: 3,
+            bookId: 1,
             loanDate: "2024-10-15",
             dueDate: "2024-10-29",
             returnDate: "2024-10-29",
             status: "returned",
             notes: "Devolvido no prazo"
+        },
+        {
+            id: 3,
+            userId: 3,
+            bookId: 1,
+            loanDate: "2024-09-01",
+            dueDate: "2024-09-18",
+            returnDate: "2024-09-18",
+            status: "returned",
+            notes: "Devolvido com 3 dias de atraso"
         }
     ]
 };
