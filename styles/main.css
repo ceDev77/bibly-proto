@@ -1007,12 +1007,12 @@ body {
 
 /* User Logged Styles - simple highlighted box */
 .nav-link.user-logged {
-    background: #ffffff;
-    color: #2c3e50 !important;
+    background: #ffeb3b; /* amarelo forte */
+    color: #000000 !important;
     border-radius: 20px;
     padding: 8px 18px !important;
     margin: 0 10px;
-    border: 2px solid #000000;
+    border: 3px solid #f39c12; /* laranja escuro */
     font-weight: 600;
     text-transform: none;
     letter-spacing: 0.5px;
@@ -1022,14 +1022,14 @@ body {
     display: inline-block;
     width: 8px;
     height: 8px;
-    background: #27ae60;
+    background: #27ae60; /* verde online */
     border-radius: 50%;
     margin-left: 6px;
 }
 
 .nav-link.user-logged:hover {
-    background: #f1f3f5;
-    border-color: #2c3e50;
+    background: #ffe082; /* amarelo mais claro no hover */
+    border-color: #e67e22;
 }
 
 .nav-link.user-logged i {
