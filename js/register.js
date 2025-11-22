@@ -121,59 +121,10 @@ function clearFieldError(input) {
     input.classList.remove('error');
 }
 
-// Processar cadastro
+// Processar cadastro (protótipo - sem funcionalidade)
 function handleRegister() {
-    const formData = {
-        fullName: document.getElementById('fullName').value,
-        email: document.getElementById('email').value,
-        phone: document.getElementById('phone').value,
-        cpf: document.getElementById('cpf').value,
-        birthDate: document.getElementById('birthDate').value,
-        address: document.getElementById('address').value,
-        password: document.getElementById('password').value,
-        confirmPassword: document.getElementById('confirmPassword').value,
-        terms: document.getElementById('terms').checked
-    };
-    
-    // Validações
-    if (!validateForm(formData)) {
-        return;
-    }
-    
-    // Verificar se e-mail já existe
-    const existingUsers = storage.load('library_users') || mockData.users;
-    const emailExists = existingUsers.some(user => user.email === formData.email);
-    
-    if (emailExists) {
-        utils.showNotification('Este e-mail já está cadastrado', 'error');
-        return;
-    }
-    
-    // Criar novo usuário
-    const newUser = {
-        id: Date.now(), // ID simples baseado em timestamp
-        name: formData.fullName,
-        email: formData.email,
-        phone: formData.phone,
-        cpf: formData.cpf,
-        birthDate: formData.birthDate,
-        address: formData.address,
-        registrationDate: utils.getCurrentDate(),
-        status: 'active'
-    };
-    
-    // Adicionar à lista de usuários
-    const users = storage.load('library_users') || [...mockData.users];
-    users.push(newUser);
-    storage.save('library_users', users);
-    
-    // Atualizar mockData
-    mockData.users = users;
-    
-    utils.showNotification('Cadastro realizado com sucesso!', 'success');
-    
-    // Limpar formulário
-    document.getElementById('registerForm').reset();
+    // Protótipo: não faz nada
+    return false;
 }
 
 // Validar formulário completo

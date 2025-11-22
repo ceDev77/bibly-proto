@@ -29,87 +29,28 @@ function setupDemoCredentials() {
     }
 }
 
-// Preencher credenciais de demonstração
+// Preencher credenciais de demonstração (protótipo - sem funcionalidade)
 function fillDemoCredentials() {
-    const emailInput = document.getElementById('loginEmail');
-    const passwordInput = document.getElementById('loginPassword');
-    
-    if (emailInput && passwordInput) {
-        emailInput.value = 'demo@biblioteca.com';
-        passwordInput.value = 'demo123';
-        
-        utils.showNotification('Credenciais de demonstração preenchidas!', 'success');
-    }
+    // Protótipo: não faz nada
+    return false;
 }
 
-// Processar login
+// Processar login (protótipo - sem funcionalidade)
 function handleLogin() {
-    const email = document.getElementById('loginEmail').value;
-    const password = document.getElementById('loginPassword').value;
-    const rememberMe = document.getElementById('rememberMe').checked;
-    
-    // Validações básicas
-    if (!email || !password) {
-        utils.showNotification('Por favor, preencha todos os campos', 'error');
-        return;
-    }
-    
-    if (!utils.validateEmail(email)) {
-        utils.showNotification('Por favor, insira um e-mail válido', 'error');
-        return;
-    }
-    
-    // Simular autenticação
-    if (email === 'demo@biblioteca.com' && password === 'demo123') {
-        // Login bem-sucedido
-        const userData = {
-            id: 1,
-            name: 'Usuário Demo',
-            email: email,
-            role: 'librarian',
-            loginTime: new Date().toISOString()
-        };
-        
-        // Salvar dados do usuário
-        if (rememberMe) {
-            storage.save('library_user', userData);
-        } else {
-            sessionStorage.setItem('library_user', JSON.stringify(userData));
-        }
-        
-        utils.showNotification('Login realizado com sucesso! Redirecionando...', 'success');
-        
-        // Redirecionar após 2 segundos
-        setTimeout(() => {
-            window.location.href = 'index.html';
-        }, 2000);
-        
-    } else {
-        // Login falhou
-        utils.showNotification('E-mail ou senha incorretos', 'error');
-        
-        // Limpar campo de senha
-        document.getElementById('loginPassword').value = '';
-    }
+    // Protótipo: não faz nada
+    return false;
 }
 
-// Verificar se usuário já está logado
+// Verificar se usuário já está logado (protótipo - sem funcionalidade)
 function checkLoginStatus() {
-    const userData = storage.load('library_user') || 
-                    JSON.parse(sessionStorage.getItem('library_user') || 'null');
-    
-    if (userData) {
-        // Usuário já está logado, redirecionar para dashboard
-        window.location.href = 'index.html';
-    }
+    // Protótipo: não faz nada
+    return false;
 }
 
-// Logout
+// Logout (protótipo - sem funcionalidade)
 function logout() {
-    storage.remove('library_user');
-    sessionStorage.removeItem('library_user');
-    utils.showNotification('Logout realizado com sucesso', 'success');
-    window.location.href = 'login.html';
+    // Protótipo: não faz nada
+    return false;
 }
 
 // Adicionar estilos específicos para login
