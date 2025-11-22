@@ -49,7 +49,7 @@ function displayBooks() {
                     </a>
                     ${book.status === 'disponivel' ? 
                         `<button class="btn btn-success btn-sm" onclick="quickLoan(${book.id})">
-                            <i class="fas fa-handshake"></i> Emprestar
+                            <i class="fas fa-handshake"></i> Pegar Emprestado
                         </button>` : 
                         `<button class="btn btn-secondary btn-sm" disabled>
                             <i class="fas fa-times"></i> Indisponível

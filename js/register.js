@@ -170,12 +170,10 @@ function handleRegister() {
     // Atualizar mockData
     mockData.users = users;
     
-    utils.showNotification('Cadastro realizado com sucesso! Redirecionando para login...', 'success');
+    utils.showNotification('Cadastro realizado com sucesso!', 'success');
     
-    // Redirecionar após 3 segundos
-    setTimeout(() => {
-        window.location.href = 'login.html';
-    }, 3000);
+    // Limpar formulário
+    document.getElementById('registerForm').reset();
 }
 
 // Validar formulário completo
