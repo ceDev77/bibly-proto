@@ -238,14 +238,14 @@ const bookDetailsStyles = `
 
     .category-tag {
         display: inline-block;
-        background: #ffffff; /* fundo branco para melhor contraste */
-        color: #000000;      /* texto preto bem legível */
+        background: #2c3e50; /* fundo escuro para destacar o texto */
+        color: #ffffff;      /* texto branco, como você pediu */
         padding: 4px 12px;
         border-radius: 15px;
         font-size: 0.8rem;
         text-transform: capitalize;
         width: fit-content;
-        border: 1px solid #000000; /* borda preta para destacar a caixinha */
+        border: 1px solid #2c3e50;
     }
 
     .status-badge {
