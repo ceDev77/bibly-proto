@@ -40,7 +40,7 @@ const mockData = {
             publisher: "Editora Ática",
             pages: 256,
             description: "Dom Casmurro é um romance escrito por Machado de Assis, publicado em 1899. A obra é narrada em primeira pessoa pelo protagonista Bentinho, que conta a história de sua vida e de seu amor por Capitu.",
-            image: "https://via.placeholder.com/300x400/4a90e2/ffffff?text=Dom+Casmurro",
+            image: "images/Dom-Casmurro-Capa-do-Livro-1-machado_de_assis-2900279676.jpg",
             status: "disponivel",
             totalCopies: 5,
             availableCopies: 3,
